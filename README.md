@@ -1,4 +1,4 @@
-# Practice (N/L)eet Code
+# Binary Black Hole
 
 <div align="center">
   <img src="https://codecov.io/gh/hamzzgab/BinaryBlackHole/branch/main/graph/badge.svg" alt="Codecov" />
