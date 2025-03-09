@@ -1,0 +1,10 @@
+comment:
+  layout: "diff, flags, files"
+
+coverage:
+  status:
+    target: 80%
+    base: auto
+    patch: auto
+    flags:
+      - default
