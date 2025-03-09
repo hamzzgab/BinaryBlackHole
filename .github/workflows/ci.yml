@@ -30,8 +30,6 @@ jobs:
           python-version: '3.10'
           cache: 'pip'
 
-      - run: pip install ruff
-
       - run: ruff check .
         continue-on-error: true
 
