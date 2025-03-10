@@ -52,7 +52,7 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - run: python -m pytest --cov=src --cov-branch --cov-report=xml
+      - run: python -m pytest --cov=src --cov-branch --cov-report=xml --log-file=pytest.log
 
       - name: Upload Pytest Logs
         if: failure()
