@@ -15,7 +15,7 @@ class TestRemoveDuplicates:
     def test_case_2(self):
         nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 
-        exp_unique_nums = len(set(nums))
+        exp_unique_nums = len(set(nums)) - 1
         act_unique_nums = remove_duplicates(nums)
 
         assert nums[:exp_unique_nums] == [0, 1, 2, 3, 4]
