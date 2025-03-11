@@ -23,7 +23,7 @@ class TestResizableArray:
         index = capacity + 1
         act_value = da.get(index)
 
-        assert act_value == None
+        assert act_value is None
 
     def test_get_should_return_value_at_valid_index(self):
         capacity, index = 3, 2
@@ -58,7 +58,7 @@ class TestResizableArray:
         capacity = 3
         da = self.setup(capacity)
 
-        assert da.popback() == None
+        assert da.popback() is None
 
     def test_set_should_set_value_at_index(self):
         capacity = 3
@@ -78,7 +78,7 @@ class TestResizableArray:
         for i in range(1, capacity + 1):
             da.pushback(i)
 
-        assert da.set(5, 100) == None
+        assert da.set(5, 100) is None
 
 
     def test_get_size_return_correct_size(self):
