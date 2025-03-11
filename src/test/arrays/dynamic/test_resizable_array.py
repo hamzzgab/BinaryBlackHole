@@ -14,7 +14,7 @@ class TestResizableArray:
 
         assert da.capacity == capacity
         assert da.arr == [-1, -1, -1]
-        assert da.len is 0
+        assert da.len == 0
 
     def test_get_should_return_none_when_index_exceeds_capacity(self):
         capacity = 3
@@ -23,7 +23,7 @@ class TestResizableArray:
         index = capacity + 1
         act_value = da.get(index)
 
-        assert act_value is None
+        assert act_value == None
 
     def test_get_should_return_value_at_valid_index(self):
         capacity, index = 3, 2
@@ -32,13 +32,14 @@ class TestResizableArray:
         da.arr = [1, 2, 3]
         act_value = da.get(index)
 
-        assert act_value is 3
+        assert act_value == 3
 
     def test_pushback_should_resize_when_full(self):
         capacity = 3
         da = self.setup(capacity)
 
-        for i in range(1, capacity + 2): da.pushback(i)
+        for i in range(1, capacity + 2):
+            da.pushback(i)
 
         assert da.arr == [1, 2, 3, 4, -1, -1]
         assert da.len == 4
@@ -47,11 +48,25 @@ class TestResizableArray:
         capacity = 3
         da = self.setup(capacity)
 
-        for i in range(1, capacity + 1): da.pushback(i)
-        for i in range(capacity, 0, -1): assert da.popback() == i
+        for i in range(1, capacity + 1):
+            da.pushback(i)
+
+        for i in range(capacity, 0, -1):
+            assert da.popback() == i
 
     def test_popback_should_return_none_when_no_values(self):
         capacity = 3
         da = self.setup(capacity)
 
-        assert da.popback() is None
+        assert da.popback() == None
+
+    def test_set_should_set_value_at_index(self):
+        capacity = 3
+        da = self.setup(capacity)
+
+        for i in range(1, capacity + 1):
+            da.pushback(i)
+
+        da.set(2, 100)
+
+        assert da.arr == [1, 2, 100]
