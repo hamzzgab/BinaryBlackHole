@@ -1,5 +1,3 @@
-from pandas.tseries.holiday import after_nearest_workday
-
 from src.main.arrays.dynamic.resizable_array import DynamicArray
 
 
