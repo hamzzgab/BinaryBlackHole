@@ -2,9 +2,9 @@ from typing import List
 
 
 def remove_element(nums: List[int], val: int) -> int:
-    k = 0
-    for i in range(len(nums)):
-        if nums[i] != val:
-            nums[k] = nums[i]
-            k += 1
-    return k
+    elements_kept = 0
+    for index in range(len(nums)):
+        if nums[index] != val:
+            nums[elements_kept] = nums[index]
+            elements_kept += 1
+    return elements_kept
