@@ -22,3 +22,8 @@ class TestValidParentheses:
         s = "]"
 
         assert is_valid(s) is False
+
+    def test_case_5(self):
+        s = "[[]"
+
+        assert is_valid(s) is False
