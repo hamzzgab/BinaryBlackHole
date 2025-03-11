@@ -1,4 +1,4 @@
-from src.main.arrays.dynamic.resizable_array import DynamicArray
+from arrays.dynamic.neet.resizable_array import DynamicArray
 
 
 class TestResizableArray:

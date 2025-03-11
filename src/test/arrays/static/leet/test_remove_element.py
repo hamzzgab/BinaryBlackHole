@@ -1,4 +1,4 @@
-from src.main.arrays.static.remove_element import remove_element
+from arrays.static.leet.remove_element import remove_element
 from typing import List
 
 
