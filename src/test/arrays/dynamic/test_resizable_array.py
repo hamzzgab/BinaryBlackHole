@@ -70,3 +70,33 @@ class TestResizableArray:
         da.set(2, 100)
 
         assert da.arr == [1, 2, 100]
+
+    def test_set_should_not_set_value_when_index_greater(self):
+        capacity = 3
+        da = self.setup(capacity)
+
+        for i in range(1, capacity + 1):
+            da.pushback(i)
+
+        assert da.set(5, 100) == None
+
+
+    def test_get_size_return_correct_size(self):
+        capacity = 3
+        da = self.setup(capacity)
+
+        for i in range(1, capacity + 1):
+            da.pushback(i)
+
+
+        assert da.get_size() == 3
+
+    def test_get_capacity_return_correct_capacity(self):
+        capacity = 3
+        da = self.setup(capacity)
+
+        # CAPACITY INCREASES
+        for i in range(1, capacity + 2):
+            da.pushback(i)
+
+        assert da.get_capacity() == 6
