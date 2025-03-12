@@ -1,10 +1,13 @@
+from src.main.arrays.stacks.Stack import Stack
+
+
 def is_valid(s: str) -> bool:
     brackets = {"(": ")", "[": "]", "{": "}", "<": ">"}
-    stack = []
+    stack = Stack(_empty_val=None, _max=len(s))
 
     for curr_bracket in s:
         if curr_bracket in list(brackets.keys()):
-            stack.append(curr_bracket)
+            stack.push(curr_bracket)
         else:
             if len(stack) == 0:
                 return False
@@ -18,3 +21,6 @@ def is_valid(s: str) -> bool:
         return False
 
     return True
+
+
+is_valid(s='([{}])')
