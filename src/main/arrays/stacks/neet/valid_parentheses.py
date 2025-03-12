@@ -1,7 +1,7 @@
 from src.main.arrays.stacks.stack import Stack
 
 
-def is_valid(s: str) -> bool:
+def is_valid(s):
     brackets = {"(": ")", "[": "]", "{": "}", "<": ">"}
     stack = Stack(_empty_val=None, _max=len(s))
 

@@ -52,13 +52,13 @@ class TestResizableArray:
             da.pushback(i)
 
         for i in range(capacity, 0, -1):
-            assert da.popback() == i
+            assert da.pop() == i
 
     def test_popback_should_return_none_when_no_values(self):
         capacity = 3
         da = self.setup(capacity)
 
-        assert da.popback() is None
+        assert da.pop() is None
 
     def test_set_should_set_value_at_index(self):
         capacity = 3

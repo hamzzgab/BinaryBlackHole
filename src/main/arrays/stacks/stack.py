@@ -1,5 +1,4 @@
 import logging
-from typing import Union
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -11,7 +10,7 @@ class Stack:
         self._empty_val = _empty_val
         self.stack = [self._empty_val] * self._max
 
-    def push(self, val: Union[int, str]) -> None:
+    def push(self, val):
         if not self.is_full():
             self._top += 1
             self.stack[self._top] = val
@@ -22,7 +21,7 @@ class Stack:
                         f"Array is full, resize?, top: {self._top}, max: {self._max}, stack: {self}")
             return None
 
-    def pop(self) -> Union[int, str]:
+    def pop(self):
         if not self.is_empty():
             popped_val = self.stack[self._top]
             self.stack[self._top] = self._empty_val
@@ -35,7 +34,7 @@ class Stack:
                         f"Array is empty, add elements?, top: {self._top}, max: {self._max}, stack: {self}")
             return -1
 
-    def top(self) -> Union[int, str]:
+    def top(self):
         if not self.is_empty():
             return self.stack[self._top]
         else:
@@ -49,8 +48,8 @@ class Stack:
     def __len__(self):
         return self._top + 1
 
-    def is_full(self) -> bool:
+    def is_full(self):
         return True if self._top == (self._max - 1) else False
 
-    def is_empty(self) -> bool:
+    def is_empty(self):
         return True if self._top == -1 else False

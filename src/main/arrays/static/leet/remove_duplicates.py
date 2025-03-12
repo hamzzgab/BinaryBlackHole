@@ -1,7 +1,4 @@
-from typing import List
-
-
-def remove_duplicates(nums: List[int]) -> int:
+def remove_duplicates(nums):
     """
     Memory : O(1)
     Time : O(n)
