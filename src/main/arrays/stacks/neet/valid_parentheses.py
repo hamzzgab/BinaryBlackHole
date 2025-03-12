@@ -1,4 +1,4 @@
-from src.main.arrays.stacks.Stack import Stack
+from src.main.arrays.stacks.stack import Stack
 
 
 def is_valid(s: str) -> bool:
