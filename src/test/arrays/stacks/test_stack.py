@@ -15,14 +15,12 @@ class TestValidParentheses:
 
         assert stack.top() == top_value
 
-
     def test_should_not_push_to_stack_when_full(self):
         stack = Stack(_max=3)
         stack.push(1)
         stack.push(2)
         stack.push(3)
         assert stack.push(4) is None
-
 
     def test_should_not_pop_stack_when_empty(self):
         stack = Stack()
