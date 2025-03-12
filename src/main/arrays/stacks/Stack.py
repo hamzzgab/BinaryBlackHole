@@ -20,6 +20,7 @@ class Stack:
         else:
             logging.log(logging.WARN,
                         f"Array is full, resize?, top: {self._top}, max: {self._max}, stack: {self}")
+            return None
 
     def pop(self) -> Union[int, str]:
         if not self.is_empty():
