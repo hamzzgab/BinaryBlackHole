@@ -7,6 +7,15 @@ class TestValidParentheses:
         stack = Stack()
         assert stack.top() == -1
 
+    def test_should_return_top_when_stack_not_empty(self):
+        stack = Stack()
+
+        top_value = 10
+        stack.push(top_value)
+
+        assert stack.top() == top_value
+
+
     def test_should_not_push_to_stack_when_full(self):
         stack = Stack(_max=3)
         stack.push(1)
