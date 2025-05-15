@@ -23,11 +23,13 @@ class TestLinkedList:
         assert not self.ll.head
 
     def test_value_inserted_at_head(self):
-        for val in [3, 2, 1]: self.ll.insert_head(val=val)
+        for val in [3, 2, 1]:
+            self.ll.insert_head(val=val)
         assert list(self.ll) == [1, 2, 3]
 
     def test_value_inserted_at_tail(self):
-        for val in [1, 2, 3]: self.ll.insert_tail(val=val)
+        for val in [1, 2, 3]:
+            self.ll.insert_tail(val=val)
         assert list(self.ll) == [1, 2, 3]
 
     def test_insert_multiple_values_from_function(self):
