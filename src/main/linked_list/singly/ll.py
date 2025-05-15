@@ -1,44 +1,97 @@
 class Node:
-    def __init__(self, val):
+    def __init__(self, val=0, next=None):
         self.val = val
-        self.next = None
+        self.next = next
 
     def __repr__(self):
-        return f"Node(val={self.val}, next={self.next.val if self.next else None})"
+        return f"{self.val} > {self.next}"
+
+
+def init_head(func):
+    def wrapper(self, val):
+        if not self.head:
+            self.head = Node(val)
+        else:
+            func(self, val)
+
+    return wrapper
+
+
+def no_head(func):
+    def wrapper(self, val):
+        if not self.head:
+            return None
+        return func(self, val)
+
+    return wrapper
 
 
 class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert_beg(self, val):
-        if self.head is None:
-            self.head = Node(val)
-            return
-        node = Node(val)
-        node.next = self.head
-        self.head = node
+    @init_head
+    def insert_head(self, val):
+        new_node = Node(val)
+        new_node.next = self.head
+        self.head = new_node
 
-    def insert_end(self, val):
-        if self.head is None:
-            self.head = Node(val)
-            return
-        node = self.get_tail()
-        node.next = Node(val)
+    @init_head
+    def insert_tail(self, val):
+        ptr = self.head
+        while ptr.next:
+            ptr = ptr.next
+        new_node = Node(val)
+        ptr.next = new_node
 
-    def get_tail(self):
-        if self.head is None:
-            return
-        node = self.head
-        while node.next:
-            node = node.next
-        return node
+    @no_head
+    def delete_head(self):
+        val = self.head.val
+        self.head = self.head.next
+        return val
 
-    def __repr__(self):
-        values = []
-        node = self.head
-        while node:
-            values.append(str(node.val))
-            node = node.next
+    @no_head
+    def delete_tail(self):
+        if not self.head.next:
+            val = self.head.val
+            self.head = None
+            return val
+        ptr = self.head
+        while ptr.next.next:
+            ptr = ptr.next
+        val = ptr.next.val
+        ptr.next = None
+        return val
 
-        return " -> ".join(values) if values else "None"
+    @no_head
+    def delete_value(self, val):
+        if self.head.val == val:
+            temp = self.head.val
+            self.head = self.head.next
+            return temp
+        prev = self.head
+        while prev.next:
+            if prev.next.val == val:
+                temp = prev.next.val
+                prev.next = prev.next.next
+                return temp
+            prev = prev.next
+
+    def insert_multiple(self, func, vals):
+        self.head = None
+        for val in vals:
+            func(val)
+
+    def __iter__(self):
+        ptr = self.head
+        while ptr:
+            yield ptr.val
+            ptr = ptr.next
+
+    def __len__(self):
+        counter = 0
+        ptr = self.head
+        while ptr:
+            counter += 1
+            ptr = ptr.next
+        return counter
