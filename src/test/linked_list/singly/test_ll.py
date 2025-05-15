@@ -61,16 +61,20 @@ class TestLinkedList:
         assert not self.ll.delete_value(1)
 
         self.ll.insert_multiple(self.ll.insert_tail, [1, 2, 3])
-        self.ll.delete_value(1)
+        assert self.ll.delete_value(1) == 1
         assert list(self.ll) == [2, 3]
 
         self.ll.insert_multiple(self.ll.insert_tail, [1, 2, 3])
-        self.ll.delete_value(2)
+        assert self.ll.delete_value(2) == 2
         assert list(self.ll) == [1, 3]
 
         self.ll.insert_multiple(self.ll.insert_tail, [1, 2, 3])
-        self.ll.delete_value(3)
+        assert self.ll.delete_value(3) == 3
         assert list(self.ll) == [1, 2]
+
+        self.ll.insert_multiple(self.ll.insert_tail, [1, 2, 3])
+        assert self.ll.delete_value(4) is None
+        assert list(self.ll) == [1, 2, 3]
 
     def test_value_is_searched(self):
         assert not self.ll.search(1)
