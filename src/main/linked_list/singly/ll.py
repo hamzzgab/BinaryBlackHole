@@ -1,5 +1,13 @@
-from src.main.linked_list.singly.decorators import init_head, no_head
-from src.main.linked_list.singly.node import Node
+from src.main.linked_list.singly.utils import init_head, no_head
+
+
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def __repr__(self):
+        return f"{self.val} > {self.next}"
 
 
 class LinkedList:
