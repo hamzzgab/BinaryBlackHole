@@ -18,10 +18,10 @@ def init_head(func):
 
 
 def no_head(func):
-    def wrapper(self, val):
+    def wrapper(self):
         if not self.head:
             return None
-        return func(self, val)
+        return func(self)
 
     return wrapper
 
@@ -63,8 +63,9 @@ class LinkedList:
         ptr.next = None
         return val
 
-    @no_head
     def delete_value(self, val):
+        if not self.head:
+            return None
         if self.head.val == val:
             temp = self.head.val
             self.head = self.head.next
@@ -82,8 +83,9 @@ class LinkedList:
         for val in vals:
             func(val)
 
-    @no_head
     def search(self, val):
+        if not self.head:
+            return None
         index, search = 0, self.head
         while search:
             if search.val == val:
