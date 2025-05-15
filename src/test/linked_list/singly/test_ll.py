@@ -79,6 +79,7 @@ class TestLinkedList:
         assert self.ll.search(1) == 0
         assert self.ll.search(2) == 1
         assert self.ll.search(3) == 2
+        assert not self.ll.search(4)
 
     def test_length_of_linked_list(self):
         vals = [1, 2, 3, 4, 5]
