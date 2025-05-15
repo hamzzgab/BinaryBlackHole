@@ -70,6 +70,14 @@ class TestLinkedList:
         self.ll.delete_value(3)
         assert list(self.ll) == [1, 2]
 
+    def test_value_is_searched(self):
+        assert not self.ll.search(1)
+
+        self.ll.insert_multiple(self.ll.insert_tail, [1, 2, 3])
+        assert self.ll.search(1) == 0
+        assert self.ll.search(2) == 1
+        assert self.ll.search(3) == 2
+
     def test_length_of_linked_list(self):
         vals = [1, 2, 3, 4, 5]
         self.ll.insert_multiple(self.ll.insert_tail, vals)

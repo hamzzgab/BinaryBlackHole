@@ -82,6 +82,16 @@ class LinkedList:
         for val in vals:
             func(val)
 
+    @no_head
+    def search(self, val):
+        index, search = 0, self.head
+        while search:
+            if search.val == val:
+                return index
+            search = search.next
+            index += 1
+        return None
+
     def __iter__(self):
         ptr = self.head
         while ptr:
