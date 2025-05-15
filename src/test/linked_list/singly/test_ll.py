@@ -1,5 +1,18 @@
-from src.main.linked_list.singly.ll import LinkedList
+from src.main.linked_list.singly.ll import LinkedList, Node
 from src.main.linked_list.singly.utils import insert_multiple
+
+
+class TestNode:
+
+    @classmethod
+    def setup_class(cls):
+        cls.node = Node()
+
+    def test_create_node(self):
+        assert repr(self.node) == "0 > None"
+
+        self.node = Node(4, Node(3))
+        assert repr(self.node) == "4 > 3 > None"
 
 
 class TestLinkedList:
@@ -31,7 +44,6 @@ class TestLinkedList:
 
     def test_head_gets_deleted(self):
         insert_multiple(self.ll, self.ll.insert_tail, [1, 2, 3])
-
 
         assert self.ll.delete_head() == 1
         assert self.ll.delete_head() == 2
