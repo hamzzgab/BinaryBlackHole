@@ -1,29 +1,5 @@
-class Node:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __repr__(self):
-        return f"{self.val} > {self.next}"
-
-
-def init_head(func):
-    def wrapper(self, val):
-        if not self.head:
-            self.head = Node(val)
-        else:
-            func(self, val)
-
-    return wrapper
-
-
-def no_head(func):
-    def wrapper(self):
-        if not self.head:
-            return None
-        return func(self)
-
-    return wrapper
+from src.main.linked_list.singly.decorators import init_head, no_head
+from src.main.linked_list.singly.node import Node
 
 
 class LinkedList:
@@ -77,11 +53,6 @@ class LinkedList:
                 prev.next = prev.next.next
                 return temp
             prev = prev.next
-
-    def insert_multiple(self, func, vals):
-        self.head = None
-        for val in vals:
-            func(val)
 
     def search(self, val):
         if not self.head:
