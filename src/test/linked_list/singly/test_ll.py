@@ -8,10 +8,10 @@ class TestNode:
         cls.node = Node()
 
     def test_create_node(self):
-        assert repr(self.node) == "(0 > None)"
+        assert repr(self.node) == "0 > None"
 
         self.node = Node(4, Node(3))
-        assert repr(self.node) == "(4 > (3 > None))"
+        assert repr(self.node) == "4 > 3 > None"
 
 
 class TestLinkedList:
