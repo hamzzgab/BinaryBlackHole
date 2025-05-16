@@ -1,6 +1,3 @@
-from src.main.linked_list.singly.utils import init_head, no_head
-
-
 class Node:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -8,6 +5,30 @@ class Node:
 
     def __repr__(self):
         return f"{self.val} > {self.next}"
+
+def insert_multiple(ll, func, vals):
+    ll.head = None
+    for val in vals:
+        func(val)
+
+
+def init_head(func):
+    def wrapper(self, val):
+        if not self.head:
+            self.head = Node(val)
+        else:
+            func(self, val)
+
+    return wrapper
+
+
+def no_head(func):
+    def wrapper(self):
+        if not self.head:
+            return None
+        return func(self)
+
+    return wrapper
 
 
 class LinkedList:
