@@ -1,4 +1,5 @@
-from src.main.linked_list.singly.ll import LinkedList, Node
+from src.main.linked_list.singly.ll import LinkedList, Node, insert_multiple
+
 
 class TestNode:
 
