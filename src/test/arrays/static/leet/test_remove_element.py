@@ -1,5 +1,4 @@
 from src.main.arrays.static.leet.remove_element import remove_element
-from typing import List
 
 
 class TestRemoveElement:
@@ -23,5 +22,5 @@ class TestRemoveElement:
         assert exp_size == act_size
 
     @staticmethod
-    def remove_element(nums: List[int], val: int) -> List[int]:
+    def remove_element(nums, val):
         return [v for v in nums if v != val]
