@@ -76,16 +76,16 @@ class TestLinkedList:
         assert self.ll.delete_value(4) is None
         assert list(self.ll) == [1, 2, 3]
 
-    # def test_value_is_searched(self):
-    #     assert not self.ll.search(1)
-    #
-    #     insert_multiple(self.ll, self.ll.insert_tail, [1, 2, 3])
-    #     assert self.ll.search(1) == 0
-    #     assert self.ll.search(2) == 1
-    #     assert self.ll.search(3) == 2
-    #     assert not self.ll.search(4)
-    #
-    # def test_length_of_linked_list(self):
-    #     vals = [1, 2, 3, 4, 5]
-    #     insert_multiple(self.ll, self.ll.insert_tail, vals)
-    #     assert len(self.ll) == len(vals)
+    def test_value_is_searched(self):
+        assert not self.ll.search(1)
+
+        insert_multiple(self.ll, self.ll.insert_tail, [1, 2, 3])
+        assert self.ll.search(1) == 0
+        assert self.ll.search(2) == 1
+        assert self.ll.search(3) == 2
+        assert not self.ll.search(4)
+
+    def test_length_of_linked_list(self):
+        vals = [1, 2, 3, 4, 5]
+        insert_multiple(self.ll, self.ll.insert_tail, vals)
+        assert len(self.ll) == len(vals)
