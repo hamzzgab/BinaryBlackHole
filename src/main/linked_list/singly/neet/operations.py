@@ -1,7 +1,7 @@
 from src.main.linked_list.singly.node import Node
 
 
-class LinkedList:
+class LinkedListOperations:
 
     @staticmethod
     def merge(l1, l2):

@@ -1,12 +1,12 @@
-from src.main.linked_list.singly.neet.ll import LinkedList
+from src.main.linked_list.singly.neet.operations import LinkedListOperations
 from src.main.linked_list.singly.node import Node
 
 
-class TestLinkedList:
+class TestLinkedListOperations:
 
     def setup_method(self):
         self.node = Node()
-        self.ll = LinkedList()
+        self.ll = LinkedListOperations()
 
     def test_merge_same_size_linked_lists(self):
         l1 = self.node.insert_multiple([1, 2, 4])
