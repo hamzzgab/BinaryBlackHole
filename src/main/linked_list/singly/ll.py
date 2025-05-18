@@ -1,15 +1,4 @@
-class Node:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __repr__(self):
-        return f"{self.val} > {self.next}"
-
-def insert_multiple(ll, func, vals):
-    ll.head = None
-    for val in vals:
-        func(val)
+from src.main.linked_list.singly.node import Node
 
 
 def init_head(func):
