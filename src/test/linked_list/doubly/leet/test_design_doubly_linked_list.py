@@ -25,3 +25,15 @@ class TestDoublyLinkedList:
 
         self.dll.add_at_index(1, 1)
         assert list(self.dll) == [0, 1]
+
+    def test_delete_at_index(self):
+        self.dll.delete_at_index(2)
+        assert list(self.dll) == []
+
+        self.dll.add_at_tail(0)
+        self.dll.add_at_tail(1)
+        self.dll.delete_at_index(0)
+        assert list(self.dll) == [1]
+
+        self.dll.delete_at_index(0)
+        assert list(self.dll) == []
