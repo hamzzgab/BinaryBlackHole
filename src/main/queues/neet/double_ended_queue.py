@@ -41,7 +41,7 @@ class Deque:
         prev, next = self.tail.prev.prev, self.tail
         popped_val = self.tail.prev.val
         self.tail.prev = prev
-        prev.next = self.tail
+        prev.next = next
         return popped_val
 
     def pop_top(self) -> int:
