@@ -1,4 +1,4 @@
 def fact(num):
     if num == 0 or num == 1:
-        return num
-    return num
+        return 1
+    return num * fact(num - 1)
