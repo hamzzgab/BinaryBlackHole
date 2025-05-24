@@ -50,7 +50,7 @@ class DoublyLinkedList:
             ptr = ptr.next
             index -= 1
         if ptr and index == 0 and ptr != self._tail:
-            prev, curr, next = ptr.prev, ptr, ptr.next
+            prev, next = ptr.prev, ptr.next
             prev.next = next
             next.prev = prev
 
