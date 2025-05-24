@@ -1,4 +1,4 @@
-from src.main.linked_list.singly.ll import LinkedList
+from src.main.linked_list.singly.SinglyLinkedList import LinkedList
 from src.main.linked_list.singly.node import Node
 
 
