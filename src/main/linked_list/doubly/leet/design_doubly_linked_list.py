@@ -55,7 +55,7 @@ class DoublyLinkedList:
             next.prev = prev
 
     def __iter__(self):
-        ptr = self._head
-        while ptr:
-            yield ptr
+        ptr = self._head.next
+        while ptr != self._tail:
+            yield ptr.val
             ptr = ptr.next
