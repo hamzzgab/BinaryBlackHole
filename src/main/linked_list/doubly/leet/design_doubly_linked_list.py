@@ -2,12 +2,7 @@ class Node:
     def __init__(self, prev=None, val=-1, next=None):
         self.prev = prev
         self.val = val
-        self.next = None
-
-    def __repr__(self):
-        prev_val = self.prev.val if self.prev else None
-        next_val = self.next.val if self.next else None
-        return f"Node<{prev_val}, {self.val}, {next_val}>"
+        self.next = next
 
 
 class DoublyLinkedList:
