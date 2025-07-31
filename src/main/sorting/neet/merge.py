@@ -2,24 +2,24 @@ def merge(arr, start, mid, end):
     left = arr[start: mid + 1]
     right = arr[mid + 1:end + 1]
 
-    l, r, i = 0, 0, start
-    while l < len(left) and r < len(right):
-        if left[l] <= right[r]:
-            arr[i] = left[l]
-            l += 1
+    l_idx, r_idx, i = 0, 0, start
+    while l_idx < len(left) and r_idx < len(right):
+        if left[l_idx] <= right[r_idx]:
+            arr[i] = left[l_idx]
+            l_idx += 1
         else:
-            arr[i] = right[r]
-            r += 1
+            arr[i] = right[r_idx]
+            r_idx += 1
         i += 1
 
-    while l < len(left):
-        arr[i] = left[l]
-        l += 1
+    while l_idx < len(left):
+        arr[i] = left[l_idx]
+        l_idx += 1
         i += 1
 
-    while r < len(right):
-        arr[i] = right[r]
-        r += 1
+    while r_idx < len(right):
+        arr[i] = right[r_idx]
+        r_idx += 1
         i += 1
 
     return arr
