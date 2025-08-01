@@ -13,7 +13,6 @@ class TestBSTInorderTraversal:
 
     def test_inorder_traversal_3(self):
         self.tree = TreeNode().create_bst([])
-        print(inorder_traversal(self.tree))
         assert [] == inorder_traversal(self.tree)
 
     def test_inorder_traversal_4(self):
