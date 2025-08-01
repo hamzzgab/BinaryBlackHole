@@ -1,5 +1,5 @@
-from src.main.trees.leet.search_in_binary_search_tree import search_bst
-from src.main.trees.tree import TreeNode
+from trees.leet.search_in_binary_search_tree import search_bst
+from trees.tree import TreeNode
 
 
 class TestSearchInBST:
