@@ -1,4 +1,4 @@
-from src.main.arrays.static.leet.remove_duplicates import remove_duplicates
+from arrays.static.leet.remove_duplicates import remove_duplicates
 
 
 class TestRemoveDuplicates:

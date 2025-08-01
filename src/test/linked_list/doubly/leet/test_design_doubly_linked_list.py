@@ -1,4 +1,4 @@
-from src.main.linked_list.doubly.leet.design_doubly_linked_list import DoublyLinkedList
+from linked_list.doubly.leet.design_doubly_linked_list import DoublyLinkedList
 
 
 class TestDoublyLinkedList:
