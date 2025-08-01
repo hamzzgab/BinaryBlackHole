@@ -1,5 +1,5 @@
-from src.main.linked_list.singly.neet.operations import LinkedListOperations
-from src.main.linked_list.singly.node import Node
+from linked_list.singly.neet.operations import LinkedListOperations
+from linked_list.singly.node import Node
 
 
 class TestLinkedListOperations:

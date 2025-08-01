@@ -1,4 +1,4 @@
-from src.main.linked_list.singly.node import Node
+from linked_list.singly.node import Node
 
 
 class LinkedListOperations:

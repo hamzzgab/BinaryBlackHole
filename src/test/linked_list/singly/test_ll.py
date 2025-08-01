@@ -1,5 +1,5 @@
-from src.main.linked_list.singly.single_linked_list import LinkedList
-from src.main.linked_list.singly.node import Node
+from linked_list.singly.single_linked_list import LinkedList
+from linked_list.singly.node import Node
 
 
 class TestLinkedList:

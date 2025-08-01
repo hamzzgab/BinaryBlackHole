@@ -1,4 +1,4 @@
-from src.main.arrays.dynamic.leet.resizable_array import DynamicArray
+from arrays.dynamic.leet.resizable_array import DynamicArray
 
 
 class TestResizableArray:
