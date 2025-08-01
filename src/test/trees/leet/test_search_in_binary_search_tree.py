@@ -9,7 +9,7 @@ class TestSearchInBST:
 
     def test_inorder_traversal_2(self):
         self.tree = TreeNode().create_bst([4, 2, 1, 3, 7])
-        assert None == search_bst(self.tree, 5)
+        assert search_bst(self.tree, 5) is None
 
     def test_inorder_traversal_3(self):
         self.tree = TreeNode().create_bst([4, 2, 1, 3, 7])
