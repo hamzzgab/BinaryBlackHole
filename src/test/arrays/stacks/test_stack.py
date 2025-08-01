@@ -1,4 +1,4 @@
-from src.main.arrays.stacks.stack import Stack
+from arrays.stacks.stack import Stack
 
 
 class TestValidParentheses:

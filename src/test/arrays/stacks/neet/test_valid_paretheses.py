@@ -1,4 +1,4 @@
-from src.main.arrays.stacks.neet.valid_parentheses import is_valid
+from arrays.stacks.neet.valid_parentheses import is_valid
 
 
 class TestValidParentheses:
