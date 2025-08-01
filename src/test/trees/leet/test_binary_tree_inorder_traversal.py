@@ -1,5 +1,5 @@
 from src.main.trees.tree import TreeNode
-from trees.leet.binary_tree_inorder_traversal import inorder_traversal
+from src.main.trees.leet.binary_tree_inorder_traversal import inorder_traversal
 
 
 class TestBSTInorderTraversal:
