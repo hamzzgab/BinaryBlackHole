@@ -1,4 +1,4 @@
-from recursion.neet.fibonacci_series import fib
+from src.main.recursion.neet.fibonacci_series import fib
 
 class TestFibonacciSeries:
     def test_fibonacci_series(self):

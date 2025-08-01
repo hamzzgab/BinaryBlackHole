@@ -1,4 +1,4 @@
-from sorting.neet.merge import sort
+from src.main.sorting.neet.merge import sort
 
 
 class TestMergeSort:

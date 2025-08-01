@@ -1,4 +1,4 @@
-from linked_list.queues.neet.double_ended_queue import Deque
+from src.main.linked_list.queues.neet.double_ended_queue import Deque
 
 
 class TestDoublyLinkedList:

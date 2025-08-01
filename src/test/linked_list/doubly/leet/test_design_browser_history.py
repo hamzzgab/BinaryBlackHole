@@ -1,4 +1,4 @@
-from linked_list.doubly.leet.design_browser_history import BrowserHistory
+from src.main.linked_list.doubly.leet.design_browser_history import BrowserHistory
 
 
 class TestBrowserHistory:

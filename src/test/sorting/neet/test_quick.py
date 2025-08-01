@@ -1,4 +1,4 @@
-from sorting.neet.quick import sort
+from src.main.sorting.neet.quick import sort
 
 
 class TestQuickSort:

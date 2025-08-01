@@ -1,4 +1,4 @@
-from arrays.stacks.stack import Stack
+from src.main.arrays.stacks.stack import Stack
 
 
 def is_valid(s):

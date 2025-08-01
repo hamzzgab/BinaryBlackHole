@@ -1,4 +1,4 @@
-from arrays.static.leet.remove_element import remove_element
+from src.main.arrays.static.leet.remove_element import remove_element
 
 
 class TestRemoveElement:
