@@ -1,4 +1,4 @@
-from src.main.recursion.neet.factorial import fact
+from recursion.neet.factorial import fact
 
 
 class TestFactorial:
