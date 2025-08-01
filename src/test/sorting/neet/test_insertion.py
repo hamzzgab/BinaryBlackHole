@@ -1,4 +1,4 @@
-from src.main.sorting.neet.insertion import sort
+from sorting.neet.insertion import sort
 
 
 class TestInsertionSort:
