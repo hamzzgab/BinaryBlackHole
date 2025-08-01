@@ -31,12 +31,12 @@ class TreeNode:
 
         return root
 
-    def display(self):
+    def display(self):  # pragma: no cover
         tree = Tree()
         self._add(tree, self)
         tree.show(sorting=False)
 
-    def _add(self, tree, node, parent_id=None):
+    def _add(self, tree, node, parent_id=None):  # pragma: no cover
         if not node:
             return
 
