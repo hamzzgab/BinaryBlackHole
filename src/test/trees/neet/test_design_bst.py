@@ -68,3 +68,14 @@ class TestDesignBst:
         self.tree.insert(key=3, val=300).insert(key=1, val=100).insert(6, 100).insert(7, 700)
         assert self.tree.remove(6).inorder_traversal() == [100, 300, 700]
 
+    def test_remove_with_two_children(self):
+        self.tree = TreeMap()
+        (self.tree
+         .insert(key=5, val=500)
+         .insert(key=3, val=300)
+         .insert(key=7, val=700)
+         .insert(key=6, val=600)
+         .insert(key=8, val=800))
+
+        result = self.tree.remove(7).inorder_traversal()
+        assert result == [300, 500, 600, 800]
