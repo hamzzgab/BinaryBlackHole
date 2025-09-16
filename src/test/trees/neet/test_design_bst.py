@@ -96,3 +96,20 @@ class TestDesignBst:
 
         result = tree.remove(7).inorder_traversal()
         assert result == [300, 500, 600, 800]
+
+    def test_remove_node_with_only_left_subtree(self):
+        tree = TreeMap()
+        tree.insert(5, 500).insert(3, 300).insert(2, 200)
+
+        result = tree.remove(3).inorder_traversal()
+        assert result == [200, 500]
+
+    def test_find_min_returns_leftmost_node(self):
+        tree = TreeMap()
+        tree.insert(5, 500).insert(3, 300).insert(2, 200).insert(4, 400)
+        min_node = TreeMap.find_min(tree.root)
+        assert min_node.key == 2
+        assert min_node.val == 200
+
+    def test_find_min_returns_none_when_node_is_none(self):
+        assert TreeMap.find_min(None) is None
