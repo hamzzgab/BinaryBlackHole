@@ -68,6 +68,7 @@ class TreeMap:
 
     def remove(self, key):
         self.root = self.remove_it(self.root, key)
+        return self if self.root else None
 
     def remove_it(self, node, key):
         if not node:
@@ -81,6 +82,7 @@ class TreeMap:
                 return node.right
             elif not node.right:
                 return node.left
+            print('reached')
             min_node = self.find_min(node.right)
             node.val = min_node.val
             node.key = min_node.key

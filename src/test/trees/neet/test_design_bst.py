@@ -12,23 +12,17 @@ class TestDesignBst:
         assert self.tree.root.val == 100
 
     def test_insert_when_key_greater(self):
-        self.tree = (TreeMap()
-                     .insert(key=1, val=100)
-                     .insert(key=2, val=200))
+        self.tree = TreeMap().insert(key=1, val=100).insert(key=2, val=200)
         assert self.tree.root.right.key == 2
         assert self.tree.root.right.val == 200
 
     def test_insert_when_key_lesser(self):
-        self.tree = (TreeMap()
-                     .insert(key=3, val=300)
-                     .insert(key=2, val=200))
+        self.tree = TreeMap().insert(key=3, val=300).insert(key=2, val=200)
         assert self.tree.root.left.key == 2
         assert self.tree.root.left.val == 200
 
     def test_insert_when_key_equal(self):
-        self.tree = (TreeMap()
-                     .insert(key=1, val=10)
-                     .insert(key=1, val=100))
+        self.tree = TreeMap().insert(key=1, val=10).insert(key=1, val=100)
         assert self.tree.root.key == 1
         assert self.tree.root.val == 100
 
@@ -37,10 +31,8 @@ class TestDesignBst:
         assert self.tree.get(1) == -1
 
     def test_get_key(self):
-        self.tree = (TreeMap()
-                     .insert(key=3, val=300)
-                     .insert(key=1, val=100)
-                     .insert(key=2, val=200))
+        self.tree = TreeMap()
+        self.tree.insert(key=3, val=300).insert(key=1, val=100).insert(key=2, val=200)
         assert self.tree.get(1) == 100
         assert self.tree.get(2) == 200
         assert self.tree.get(3) == 300
@@ -48,19 +40,14 @@ class TestDesignBst:
     def test_get_min(self):
         self.tree = TreeMap()
         assert self.tree.get_min() == -1
-        (self.tree
-         .insert(key=2, val=2)
-         .insert(key=11, val=11)
-         .insert(key=31, val=31))
+
+        self.tree.insert(key=2, val=2).insert(key=11, val=11).insert(key=31, val=31)
         assert self.tree.get_min() == 2
 
     def test_get_max(self):
         self.tree = TreeMap()
         assert self.tree.get_max() == -1
-        (self.tree
-         .insert(key=2, val=2)
-         .insert(key=11, val=11)
-         .insert(key=31, val=31))
+        self.tree.insert(key=2, val=2).insert(key=11, val=11).insert(key=31, val=31)
         assert self.tree.get_max() == 31
 
     def test_inorder_traversal(self):
@@ -70,14 +57,14 @@ class TestDesignBst:
         assert self.tree.insert(1, 1).inorder_traversal() == [1, 2, 3]
 
     def test_remove(self):
-        self.tree = (TreeMap()
-                     .insert(key=3, val=300)
-                     .insert(key=1, val=100)
-                     .insert(key=2, val=200))
+        self.tree = TreeMap()
+        assert self.tree.remove(1) is None
 
-        self.tree.remove(2)
-        assert self.tree.inorder_traversal() == [100, 300]
-        self.tree.remove(1)
-        assert self.tree.inorder_traversal() == [300]
-        self.tree.remove(3)
-        assert self.tree.inorder_traversal() == []
+        self.tree.insert(key=3, val=300).insert(key=1, val=100).insert(key=2, val=200)
+        assert self.tree.remove(2).inorder_traversal() == [100, 300]
+        assert self.tree.remove(1).inorder_traversal() == [300]
+        assert self.tree.remove(3) is None
+
+        self.tree.insert(key=3, val=300).insert(key=1, val=100).insert(6, 100).insert(7, 700)
+        assert self.tree.remove(6).inorder_traversal() == [100, 300, 700]
+
