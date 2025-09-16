@@ -99,14 +99,18 @@ class TestDesignBst:
 
     def test_remove_node_with_only_left_subtree(self):
         tree = TreeMap()
-        tree.insert(5, 500).insert(3, 300).insert(2, 200)
+        tree.insert(key=5, val=500).insert(key=3, val=300).insert(2, val=200)
 
         result = tree.remove(3).inorder_traversal()
         assert result == [200, 500]
 
     def test_find_min_returns_leftmost_node(self):
         tree = TreeMap()
-        tree.insert(5, 500).insert(3, 300).insert(2, 200).insert(4, 400)
+        (tree
+         .insert(key=5, val=500)
+         .insert(key=3, val=300)
+         .insert(key=2, val=200)
+         .insert(key=4, val=400))
         min_node = TreeMap.find_min(tree.root)
         assert min_node.key == 2
         assert min_node.val == 200
