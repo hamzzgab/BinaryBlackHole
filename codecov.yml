@@ -1,10 +1,20 @@
 comment:
-  layout: "diff, flags, files"
+  layout:
+    - diff
+    - flags
+    - files
 
 coverage:
   status:
-    target: 80%
-    base: auto
-    patch: auto
-    flags:
-      - default
+    project:
+      default:
+        target: 80%
+        base: auto
+    patch:
+      default:
+        target: auto
+
+  flags:
+    default:
+      paths:
+        - .

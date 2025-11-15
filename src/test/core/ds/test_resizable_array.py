@@ -1,4 +1,4 @@
-from arrays.dynamic.leet.resizable_array import DynamicArray
+from core.ds.resizable_array import DynamicArray
 
 
 class TestResizableArray:
@@ -80,14 +80,12 @@ class TestResizableArray:
 
         assert da.set(5, 100) is None
 
-
     def test_get_size_return_correct_size(self):
         capacity = 3
         da = self.setup(capacity)
 
         for i in range(1, capacity + 1):
             da.pushback(i)
-
 
         assert da.get_size() == 3
 
